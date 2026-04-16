@@ -37,3 +37,8 @@ This monorepo utilizes an automated standard via `autoskills.sh`.
   - The root `.cursorrules` MUST be committed to Git to preserve Active Rule Guarding.
   - Raw `CLAUDE.md` temporary files are explicitly ignored in `.gitignore` to prevent mid-script pipeline crashes from leaking into the commit history.
 
+## 7. Historical Architecture Decisions (ADR)
+All major structural and tooling decisions are tracked in `.agents/history/`. 
+- **Lookup Rule**: When proposing large architectural pivots or modifying established automation strategies (e.g., migrating off Turborepo, changing linting hooks, or mutating agent boundaries), consult the `.agents/history/` directory first to comprehend *why* the current system was built this way before attempting to rip it out.
+- **Update Rule**: Whenever you (the AI and the developer) finalize a *new* significant architectural shift, automation flow, or boundary rule, the AI MUST proactively generate a summarized `.md` file documenting the context and decisions made, and save it to `.agents/history/YYYY-MM-DD-filename.md`.
+
