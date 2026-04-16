@@ -1,0 +1,39 @@
+name: Sync AI Agent Skills (Autoskills)
+
+on:
+  schedule:
+    # Runs every Sunday at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Enable manual triggering
+
+jobs:
+  sync-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies & Trigger Sync
+        # npm ci will automatically run the postinstall script which calls `turbo run sync:skills`
+        # We append --ignore-scripts false just to be explicit
+        run: npm ci
+
+      - name: Create Pull Request with updated Skills
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(ai): auto-update agent skills from autoskills.sh"
+          title: "🤖 Auto-update AI Agent Skills"
+          body: |
+            This PR automatically updates the `.agents/workflows/` and any other AI standard files using [autoskills.sh](https://autoskills.sh/).
+            
+            This ensures our AI pair-programmers have the most up-to-date context regarding our technology stack.
+          branch: "chore/update-ai-skills"
+          delete-branch: true
+          # We define a label so it's easy to filter
+          labels: "automation, dependencies, ai"

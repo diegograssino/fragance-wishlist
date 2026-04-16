@@ -11,7 +11,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "turbo run sync:skills --continue"
   },
   "devDependencies": {
     "husky": "^9.1.5",

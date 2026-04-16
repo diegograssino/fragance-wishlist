@@ -25,3 +25,15 @@ Agents must actively protect the integrity of the codebase rules.
 - **Rule Check**: Before writing code or executing a user prompt, the agent MUST evaluate if the user's request contradicts any established rules or "Gold Standards" documented in `.agents/workflows/`.
 - **Ask Before Breaking**: If a user request contradicts a rule, the agent MUST pause and explicitly ask the user: *"This request contradicts our established rule [Rule Name]. Should I proceed with this as an exception, or should we update the `.agents/workflows/` rules to reflect this new approach?"*
 - **Auto-Update**: If the user confirms it's a new standard, the agent must update the relevant `.md` rule file BEFORE proceeding with the code changes.
+
+## 6. Automated AI Skills Synchronization
+This monorepo utilizes an automated standard via `autoskills.sh`.
+- When `npm install` is run, a `postinstall` script via Turborepo fetches the newest skill rules for the frameworks (e.g., Next.js, TypeORM) and creates an `autoskills.md` file within the app's workflow directories (`fw-web`, `fw-api`).
+- There is also a weekly GitHub Action that silently opens PRs keeping these rules fresh even when no dependencies change.
+**CRITICAL**: As an AI, you MUST NOT manually rewrite these `autoskills.md` files. Treat them as read-only automated knowledge graphs, while `.agents/workflows/` custom architecture guidelines take precedence.
+
+- **Version Control Constraints**:
+  - The final `.agents/workflows/**/autoskills.md` files MUST be committed to Git to preserve agent knowledge.
+  - The root `.cursorrules` MUST be committed to Git to preserve Active Rule Guarding.
+  - Raw `CLAUDE.md` temporary files are explicitly ignored in `.gitignore` to prevent mid-script pipeline crashes from leaking into the commit history.
+

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:skills": "npx -y autoskills --agent claude-code && if [ -f CLAUDE.md ]; then mv CLAUDE.md ../../.agents/workflows/fw-web/autoskills.md; fi"
   },
   "dependencies": {
     "@repo/ui": "*",

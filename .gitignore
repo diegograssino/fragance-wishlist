@@ -51,3 +51,6 @@ next-env.d.ts
 
 # unwanted
 perfum-api/
+
+# AI Temporary files (mid-script execution artifacts)
+CLAUDE.md
