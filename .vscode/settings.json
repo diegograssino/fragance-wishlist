@@ -1,0 +1,64 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "checklist",
+      "type": "text",
+      "foreground": "#000000",
+      "background": "#FFF9C4",
+      "iconColour": "#F9A825"
+    },
+    "FIX": {
+      "icon": "alert",
+      "type": "text",
+      "foreground": "#000000",
+      "background": "#FFCDD2",
+      "iconColour": "#C62828"
+    },
+    "DOC": {
+      "icon": "book",
+      "type": "text",
+      "foreground": "#000000",
+      "background": "#C8E6C9",
+      "iconColour": "#2E7D32"
+    }
+  },
+  "todo-tree.regex.regex": "(?://|#|<!--|;|/\\*\\*?|^\\s*\\*)\\s+\\b($TAGS)\\b(?::|\\s)(.*)",
+  "todo-tree.regex.regexCaseSensitive": false,
+  "todo-tree.general.tags": ["TODO", "FIX", "DOC"],
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules/**", "**/.turbo/**"],
+  "todo-tree.filtering.useBuiltInExcludes": "search excludes",
+  "cSpell.enabled": true,
+  "cSpell.enabledFileTypes": {
+    "typescript": true,
+    "typescriptreact": true,
+    "javascript": true,
+    "javascriptreact": true,
+    "markdown": true,
+    "css": true,
+    "scss": true
+  },
+  "cSpell.ignorePaths": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/.turbo/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.git/**",
+    "**/coverage/**",
+    "**/*.d.ts",
+    "**/*.json",
+    "**/next.config.*",
+    "**/jest.config.*",
+    "**/.husky/**",
+    "**/public/**"
+  ],
+  // DOC: Add ignore words here if you found any check with errors
+  "cSpell.ignoreWords": ["fragance", "stylelint", "stylelintrc"]
+}

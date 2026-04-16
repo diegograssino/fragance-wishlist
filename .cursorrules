@@ -1,0 +1,9 @@
+# Repository Rules
+
+This repository uses a single source of truth for its rules and workflows, located in the `.agents/workflows/` directory.
+
+Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in `.agents/workflows/`.
+
+**Active Rule Guarding:**
+If a user prompt contradicts any established rule in `.agents/workflows/`, you MUST pause and ask the user: *"This request contradicts our established rule [Rule Name]. Should I proceed with this as an exception, or should we update the `.agents/workflows/` rules to reflect this new approach?"*
+If the user confirms an update, modify the `.md` rule file BEFORE proceeding.

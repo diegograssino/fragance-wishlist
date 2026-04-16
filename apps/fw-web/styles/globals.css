@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  /* Text specific base color that should be generated */
+  --base-text-inverted: color-mix(in srgb, var(--base-text) 5%, white);
+
+  /* Apply base palette into our semantic design system */
+  --background: var(--base-primary);
+  --accent-1: var(--base-secondary);
+  --accent-2: var(--base-tertiary);
+  --accent-3: var(--base-quaternary);
+  --foreground: var(--base-text);
+  --foreground-inverted: var(--base-text-inverted);
+
+  /* Dynamically calculated muted (50% transparent) versions */
+  --background-muted: color-mix(in srgb, var(--background) 50%, transparent);
+  --accent-1-muted: color-mix(in srgb, var(--accent-1) 50%, transparent);
+  --accent-2-muted: color-mix(in srgb, var(--accent-2) 50%, transparent);
+  --accent-3-muted: color-mix(in srgb, var(--accent-3) 50%, transparent);
+  --foreground-muted: color-mix(in srgb, var(--foreground) 50%, transparent);
+  --foreground-inverted-muted: color-mix(
+    in srgb,
+    var(--foreground-inverted) 50%,
+    transparent
+  );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
+  --color-accent-1: var(--accent-1);
+  --color-accent-1-muted: var(--accent-1-muted);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-muted: var(--accent-2-muted);
+  --color-accent-3: var(--accent-3);
+  --color-accent-3-muted: var(--accent-3-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-inverted: var(--foreground-inverted);
+  --color-foreground-inverted-muted: var(--foreground-inverted-muted);
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Automatically generate dark mode by mixing base colors with black */
+    --background: color-mix(in srgb, var(--base-primary) 5%, black);
+    --accent-1: color-mix(in srgb, var(--base-secondary) 15%, black);
+    --accent-2: color-mix(in srgb, var(--base-tertiary) 45%, black);
+    --accent-3: color-mix(in srgb, var(--base-quaternary) 90%, black);
+
+    /* Swap foreground values for the dark theme */
+    --foreground: var(--base-text-inverted);
+    --foreground-inverted: var(--base-text);
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-primary);
+}
