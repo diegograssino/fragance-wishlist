@@ -1,7 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import { TypographyProps } from "./Typography.types";
-import { sizeMapping, weightMapping, variantMapping, booleanMappings } from "./Typography.constants";
+import {
+  sizeMapping,
+  weightMapping,
+  variantMapping,
+  booleanMappings,
+} from "./Typography.constants";
 import { getTypographyDefaults } from "./Typography.helpers";
 
 const Typography = ({
@@ -31,7 +36,7 @@ const Typography = ({
         truncate && booleanMappings.truncate,
         shadow && booleanMappings.shadow,
         disabled && booleanMappings.disabled,
-        className
+        className,
       )}
     >
       {children}

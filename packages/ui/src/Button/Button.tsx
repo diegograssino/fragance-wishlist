@@ -17,17 +17,20 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       className,
       ...otherProps
     },
-    ref
+    ref,
   ) => {
     const classes = clsx(
       "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-1 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:pointer-events-none",
       variantStyles[variant as string],
       sizeStyles[size as string],
-      className
+      className,
     );
 
     if (as === Link || href) {
-      const restLinkProps = otherProps as Omit<React.ComponentPropsWithoutRef<typeof Link>, "href">;
+      const restLinkProps = otherProps as Omit<
+        React.ComponentPropsWithoutRef<typeof Link>,
+        "href"
+      >;
       return (
         <Link
           ref={ref as React.ForwardedRef<HTMLAnchorElement>}
@@ -51,7 +54,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

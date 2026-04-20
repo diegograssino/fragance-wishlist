@@ -7,13 +7,16 @@ const Container = forwardRef<HTMLElement, ContainerProps>(
     return (
       <Tag
         ref={ref}
-        className={clsx("max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full", className)}
+        className={clsx(
+          "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full",
+          className,
+        )}
         {...otherProps}
       >
         {children}
       </Tag>
     );
-  }
+  },
 );
 
 Container.displayName = "Container";

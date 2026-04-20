@@ -5,7 +5,7 @@
  */
 export const getValidNumericString = (
   param: string | string[] | undefined,
-  fallback: string
+  fallback: string,
 ): string => {
   if (!param) return fallback;
   const value = Array.isArray(param) ? param[0] : param;
@@ -18,7 +18,7 @@ export const getValidNumericString = (
  */
 export const getValidNumber = (
   param: string | number | undefined | null,
-  fallback: number
+  fallback: number,
 ): number => {
   if (param === undefined || param === null) return fallback;
   const parsed = Number(param);

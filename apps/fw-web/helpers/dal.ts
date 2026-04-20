@@ -5,9 +5,9 @@
  * @returns An object containing the HTTP status and a formatted error message.
  */
 export const createDALError = (response: Response, resourceName: string) => {
-  return { 
-    status: response.status, 
-    message: `Failed to fetch ${resourceName}: ${response.statusText || response.status}` 
+  return {
+    status: response.status,
+    message: `Failed to fetch ${resourceName}: ${response.statusText || response.status}`,
   };
 };
 
@@ -21,6 +21,9 @@ export const handleDALError = (err: unknown) => {
   const errorObj = err as Record<string, unknown>;
   return {
     status: typeof errorObj?.status === "number" ? errorObj.status : 500,
-    message: typeof errorObj?.message === "string" ? errorObj.message : "An unexpected network error occurred"
+    message:
+      typeof errorObj?.message === "string"
+        ? errorObj.message
+        : "An unexpected network error occurred",
   };
 };

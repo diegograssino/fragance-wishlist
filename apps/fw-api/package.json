@@ -6,6 +6,6 @@
     "dev": "echo \"Nothing to run yet\"",
     "build": "echo \"Nothing to build yet\"",
     "lint": "echo \"Nothing to lint yet\"",
-    "sync:skills": "npx -y autoskills --agent claude-code && if [ -f CLAUDE.md ]; then mv CLAUDE.md ../../.agents/workflows/fw-api/autoskills.md; fi"
+    "sync:skills": "npx -y autoskills -y --agent claude-code && if [ -f CLAUDE.md ]; then mv CLAUDE.md ../../.agents/workflows/fw-api/autoskills.md; fi"
   }
 }

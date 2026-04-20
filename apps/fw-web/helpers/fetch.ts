@@ -2,7 +2,7 @@ import { log } from "./logger";
 
 export const apiFetch = async (
   input: string | URL | Request,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<Response> => {
   const method = init?.method || "GET";
   const urlString = input.toString();
@@ -15,12 +15,17 @@ export const apiFetch = async (
     const duration = Date.now() - startTime;
 
     if (response.ok) {
-      log.info(`[FETCH SUCCESS] <- ${method} ${response.status} (${duration}ms)`);
+      log.info(
+        `[FETCH SUCCESS] <- ${method} ${response.status} (${duration}ms)`,
+      );
     } else {
-      log.error(`[FETCH HTTP ERROR] <- ${method} ${response.status} (${duration}ms)`, {
-        statusText: response.statusText,
-        url: urlString,
-      });
+      log.error(
+        `[FETCH HTTP ERROR] <- ${method} ${response.status} (${duration}ms)`,
+        {
+          statusText: response.statusText,
+          url: urlString,
+        },
+      );
     }
 
     return response;

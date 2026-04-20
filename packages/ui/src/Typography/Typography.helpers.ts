@@ -1,7 +1,9 @@
 import { ElementType } from "react";
 import { ThemeSize, ThemeWeight } from "../types";
 
-export const getTypographyDefaults = (Tag: ElementType): { defaultSize: ThemeSize; defaultWeight: ThemeWeight } => {
+export const getTypographyDefaults = (
+  Tag: ElementType,
+): { defaultSize: ThemeSize; defaultWeight: ThemeWeight } => {
   switch (Tag) {
     case "h1":
       return { defaultSize: "4xl", defaultWeight: "bold" };

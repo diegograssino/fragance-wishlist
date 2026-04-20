@@ -15,8 +15,12 @@ const internalLogger = pino({
 });
 
 export const log = {
-  info: (msg: string, ctx?: Record<string, unknown>) => internalLogger.info(ctx || {}, msg),
-  error: (msg: string, err?: unknown) => internalLogger.error(err as object || {}, msg),
-  warn: (msg: string, ctx?: Record<string, unknown>) => internalLogger.warn(ctx || {}, msg),
-  debug: (msg: string, ctx?: Record<string, unknown>) => internalLogger.debug(ctx || {}, msg),
+  info: (msg: string, ctx?: Record<string, unknown>) =>
+    internalLogger.info(ctx || {}, msg),
+  error: (msg: string, err?: unknown) =>
+    internalLogger.error((err as object) || {}, msg),
+  warn: (msg: string, ctx?: Record<string, unknown>) =>
+    internalLogger.warn(ctx || {}, msg),
+  debug: (msg: string, ctx?: Record<string, unknown>) =>
+    internalLogger.debug(ctx || {}, msg),
 };

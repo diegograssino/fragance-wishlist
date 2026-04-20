@@ -5,8 +5,10 @@ import { getPageParams } from "@/helpers/params";
 import { resolvePageData } from "@/helpers/page";
 
 const Product = async (props: PageProps<{ productId: string }>) => {
-  const { params: { productId } } = await getPageParams(props);
-  
+  const {
+    params: { productId },
+  } = await getPageParams(props);
+
   const product = resolvePageData(await productByIdDAL(productId));
 
   return <ProductPage product={product} />;

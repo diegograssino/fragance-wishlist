@@ -17,11 +17,11 @@ export const productsDAL = async ({
   try {
     const limitNum = getValidNumber(
       limit,
-      Number(CATALOGUE_PAGINATION.DEFAULT_PER_PAGE)
+      Number(CATALOGUE_PAGINATION.DEFAULT_PER_PAGE),
     );
     const offsetNum = getValidNumber(
       offset,
-      Number(CATALOGUE_PAGINATION.DEFAULT_PAGE)
+      Number(CATALOGUE_PAGINATION.DEFAULT_PAGE),
     );
 
     const url = `${apiBaseUrl}/perfumes?limit=${limitNum}&offset=${offsetNum}`;
@@ -37,7 +37,7 @@ export const productsDAL = async ({
     }
 
     const data = productsDTO((await response.json()).perfumes || []);
-    
+
     if (!data || data.length === 0) {
       log.warn(`[productsDAL] Request was successful but returned 0 products.`);
     }
@@ -71,9 +71,11 @@ export const productByIdDAL = async (
     }
 
     const data = productDTO(await response.json());
-    
+
     if (!data) {
-       log.warn(`[productByIdDAL] Request was successful but no data returned for ID ${id}.`);
+      log.warn(
+        `[productByIdDAL] Request was successful but no data returned for ID ${id}.`,
+      );
     }
 
     return {

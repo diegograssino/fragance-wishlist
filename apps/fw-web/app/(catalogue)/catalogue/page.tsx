@@ -11,7 +11,7 @@ const Catalogue = async (props: PageProps) => {
     await productsDAL({
       limit: perPage,
       offset: page,
-    })
+    }),
   );
 
   return (

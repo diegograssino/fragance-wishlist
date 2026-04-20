@@ -1,10 +1,16 @@
 export const variantStyles: Record<string, string> = {
-  default: "bg-foreground text-background hover:bg-foreground-muted disabled:bg-foreground-muted disabled:text-background",
-  "accent-1": "bg-accent-1 text-foreground hover:bg-accent-1-muted disabled:bg-accent-1-muted disabled:text-foreground-muted",
-  "accent-2": "bg-accent-2 text-foreground hover:bg-accent-2-muted disabled:bg-accent-2-muted disabled:text-foreground-muted",
-  "accent-3": "bg-accent-3 text-background hover:bg-accent-3-muted disabled:bg-accent-3-muted disabled:text-background",
-  outline: "border border-foreground text-foreground hover:bg-foreground-muted disabled:border-foreground-muted disabled:text-foreground-muted",
-  ghost: "text-foreground hover:bg-foreground-muted disabled:text-foreground-muted",
+  default:
+    "bg-foreground text-background hover:bg-foreground-muted disabled:bg-foreground-muted disabled:text-background",
+  "accent-1":
+    "bg-accent-1 text-foreground hover:bg-accent-1-muted disabled:bg-accent-1-muted disabled:text-foreground-muted",
+  "accent-2":
+    "bg-accent-2 text-foreground hover:bg-accent-2-muted disabled:bg-accent-2-muted disabled:text-foreground-muted",
+  "accent-3":
+    "bg-accent-3 text-background hover:bg-accent-3-muted disabled:bg-accent-3-muted disabled:text-background",
+  outline:
+    "border border-foreground text-foreground hover:bg-foreground-muted disabled:border-foreground-muted disabled:text-foreground-muted",
+  ghost:
+    "text-foreground hover:bg-foreground-muted disabled:text-foreground-muted",
 };
 
 export const sizeStyles: Record<string, string> = {
