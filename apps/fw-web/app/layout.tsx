@@ -1,7 +1,8 @@
-import themeColors from "@/styles/colors";
 import { primaryFont, secondaryFont } from "@/styles/fonts";
+import { THEME_STYLES } from "@repo/ui";
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Fragrance Wishlist",
@@ -17,9 +18,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${primaryFont.variable} ${secondaryFont.variable} h-full antialiased`}
-      style={themeColors}
+      style={THEME_STYLES}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

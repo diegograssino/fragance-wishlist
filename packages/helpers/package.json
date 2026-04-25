@@ -1,0 +1,11 @@
+{
+  "name": "@repo/helpers",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./getEnv": "./src/getEnv/index.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

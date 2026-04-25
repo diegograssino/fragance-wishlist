@@ -16,6 +16,10 @@ export type ThemeVariant =
   | "accent-1"
   | "accent-2"
   | "accent-3"
+  | "success"
+  | "error"
+  | "alert"
+  | "info"
   | "outline"
   | "ghost";
 export type ThemeWeight = "light" | "default" | "medium" | "semibold" | "bold";

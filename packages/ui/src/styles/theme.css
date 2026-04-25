@@ -1,0 +1,79 @@
+:root {
+  --base-foreground-inverted: color-mix(
+    in srgb,
+    var(--base-foreground) 5%,
+    white
+  );
+  --background: var(--base-background);
+  --accent-1: var(--base-accent-1);
+  --accent-2: var(--base-accent-2);
+  --accent-3: var(--base-accent-3);
+  --foreground: var(--base-foreground);
+  --foreground-inverted: var(--base-foreground-inverted);
+  --success: var(--base-success);
+  --error: var(--base-error);
+  --alert: var(--base-alert);
+  --info: var(--base-info);
+
+  /* Muted variants */
+  --background-muted: color-mix(in srgb, var(--background) 50%, transparent);
+  --accent-1-muted: color-mix(in srgb, var(--accent-1) 50%, transparent);
+  --accent-2-muted: color-mix(in srgb, var(--accent-2) 50%, transparent);
+  --accent-3-muted: color-mix(in srgb, var(--accent-3) 50%, transparent);
+  --foreground-muted: color-mix(in srgb, var(--foreground) 50%, transparent);
+  --foreground-inverted-muted: color-mix(
+    in srgb,
+    var(--foreground-inverted) 50%,
+    transparent
+  );
+  --success-muted: color-mix(in srgb, var(--success) 50%, transparent);
+  --error-muted: color-mix(in srgb, var(--error) 50%, transparent);
+  --alert-muted: color-mix(in srgb, var(--alert) 50%, transparent);
+  --info-muted: color-mix(in srgb, var(--info) 50%, transparent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
+  --color-accent-1: var(--accent-1);
+  --color-accent-1-muted: var(--accent-1-muted);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-muted: var(--accent-2-muted);
+  --color-accent-3: var(--accent-3);
+  --color-accent-3-muted: var(--accent-3-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-inverted: var(--foreground-inverted);
+  --color-foreground-inverted-muted: var(--foreground-inverted-muted);
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-error: var(--error);
+  --color-error-muted: var(--error-muted);
+  --color-alert: var(--alert);
+  --color-alert-muted: var(--alert-muted);
+  --color-info: var(--info);
+  --color-info-muted: var(--info-muted);
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: color-mix(in srgb, var(--base-background) 5%, black);
+    --accent-1: color-mix(in srgb, var(--base-accent-1) 15%, black);
+    --accent-2: color-mix(in srgb, var(--base-accent-2) 45%, black);
+    --accent-3: color-mix(in srgb, var(--base-accent-3) 90%, black);
+    --foreground: var(--base-foreground-inverted);
+    --foreground-inverted: var(--base-foreground);
+    --success: color-mix(in srgb, var(--base-success) 20%, black);
+    --error: color-mix(in srgb, var(--base-error) 20%, black);
+    --alert: color-mix(in srgb, var(--base-alert) 20%, black);
+    --info: color-mix(in srgb, var(--base-info) 20%, black);
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-primary);
+}

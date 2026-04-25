@@ -7,4 +7,6 @@ export type * from "./Container/Container.types";
 export { default as Typography } from "./Typography/Typography";
 export type * from "./Typography/Typography.types";
 
+export * from "./theme";
+
 export type * from "./types";

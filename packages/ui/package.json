@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.tsx"
+    ".": "./src/index.tsx",
+    "./styles/theme.css": "./src/styles/theme.css"
+  },
+  "dependencies": {
+    "@repo/helpers": "*"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "clsx": "*",
     "next": "*",
-    "clsx": "*"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^19.0.0"
+    "@storybook/react": "^10.3.5",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
   }
 }

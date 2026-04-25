@@ -49,8 +49,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# unwanted
-perfum-api/
+# Ignored, put inside what you need for local development only
+*ignored*/
 
 # AI Temporary files (mid-script execution artifacts)
 CLAUDE.md
+
+# Storybook
+storybook-static

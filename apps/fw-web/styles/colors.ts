@@ -1,4 +1,5 @@
-/* Base palette: https: //www.colorhunt.co/palette/fffbf1fff2d0ffb2b2e36a6a */
+import React from "react";
+
 const themeColors = {
   "--base-primary": "#FFFBF1",
   "--base-secondary": "#FFF2D0",

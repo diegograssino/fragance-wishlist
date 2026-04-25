@@ -13,6 +13,7 @@ Upgrade the current project to the latest Next.js version following official mig
 1. **Detect current version**: Read `package.json` to identify the current Next.js version and related dependencies (React, React DOM, etc.)
 
 2. **Fetch the latest upgrade guide**: Use WebFetch to get the official upgrade documentation:
+
    - Codemods: https://nextjs.org/docs/app/guides/upgrading/codemods
    - Version-specific guides (adjust version as needed):
      - https://nextjs.org/docs/app/guides/upgrading/version-16
@@ -28,6 +29,7 @@ Upgrade the current project to the latest Next.js version following official mig
    ```
 
    Common transforms:
+
    - `next-async-request-api` - Updates async Request APIs (v15)
    - `next-request-geo-ip` - Migrates geo/ip properties (v15)
    - `next-dynamic-access-named-export` - Transforms dynamic imports (v15)
@@ -39,6 +41,7 @@ Upgrade the current project to the latest Next.js version following official mig
    ```
 
 6. **Review breaking changes**: Check the upgrade guide for manual changes needed:
+
    - API changes (e.g., async params in v15)
    - Configuration changes in `next.config.js`
    - Deprecated features being removed

@@ -25,6 +25,10 @@ export const variantMapping: Record<string, string> = {
   "accent-1": "text-accent-1",
   "accent-2": "text-accent-2",
   "accent-3": "text-accent-3",
+  success: "text-success",
+  error: "text-error",
+  alert: "text-alert",
+  info: "text-info",
 };
 
 export const booleanMappings = {

@@ -7,6 +7,13 @@ export const variantStyles: Record<string, string> = {
     "bg-accent-2 text-foreground hover:bg-accent-2-muted disabled:bg-accent-2-muted disabled:text-foreground-muted",
   "accent-3":
     "bg-accent-3 text-background hover:bg-accent-3-muted disabled:bg-accent-3-muted disabled:text-background",
+  success:
+    "bg-success text-white hover:bg-success-muted disabled:bg-success-muted disabled:text-white",
+  error:
+    "bg-error text-white hover:bg-error-muted disabled:bg-error-muted disabled:text-white",
+  alert:
+    "bg-alert text-white hover:bg-alert-muted disabled:bg-alert-muted disabled:text-white",
+  info: "bg-info text-white hover:bg-info-muted disabled:bg-info-muted disabled:text-white",
   outline:
     "border border-foreground text-foreground hover:bg-foreground-muted disabled:border-foreground-muted disabled:text-foreground-muted",
   ghost:
