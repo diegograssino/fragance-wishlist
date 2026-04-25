@@ -33,3 +33,9 @@ Adding a new dynamic token requires 5 specific steps across the monorepo archite
 - **Why we inject via JS:** Standard CSS files cannot natively read `.env` variables. Therefore, `theme.ts` serves as the critical TypeScript bridge—it dynamically reads the environment variables and constructs the `THEME_STYLES` dictionary.
 - **The Cascade Rule:** For Tailwind v4 to properly process dynamic variables (like `var(--base-accent-1)`), they MUST be physically attached to the absolute top of the DOM tree.
 - **Implementation:** Always apply the `THEME_STYLES` dictionary directly to the root `<html>` tag (via `style={THEME_STYLES}` in Next.js, or via a static execution script in Storybook). Do NOT create a wrapper component like `<ThemeProvider>` for this.
+
+## 5. Radius, Shadows, and Fonts
+
+- **Radius & Shadows:** Do NOT define custom CSS variables for border-radius or shadows. Use standard Tailwind CSS utility classes (e.g., `rounded-lg`, `shadow-md`) to maintain consistency and simplify the theme.
+- **Fonts:** Use `--font-primary` and `--font-secondary` variables. These are typically set by the `next/font` system in the application's root layout. In `theme.css`, these are mapped to the `@theme inline` block to provide `font-primary` and `font-secondary` utilities.
+- **Neutral Scale:** Avoid manual neutral scales (gray-100, etc.) in the global CSS. Prefer using `color-mix` on the foreground/background or the built-in Tailwind neutral colors if specific gray shades are required.
