@@ -15,7 +15,8 @@
           "utility",
           "config",
           "plugin",
-          "custom-variant"
+          "custom-variant",
+          "source"
         ]
       }
     ]

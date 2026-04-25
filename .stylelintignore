@@ -1,0 +1,11 @@
+node_modules
+.next
+.turbo
+dist
+build
+storybook-static
+*.js
+*.ts
+*.tsx
+*.json
+*.md
