@@ -9,6 +9,8 @@ on:
 jobs:
   sync-skills:
     runs-on: ubuntu-latest
+    env:
+      HUSKY: '0' # Disable Husky hooks in CI (lint-staged can't stash paths beyond symlinks)
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

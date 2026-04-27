@@ -55,3 +55,35 @@ All major structural and tooling decisions are tracked in `.agents/history/`.
 
 - **Lookup Rule**: When proposing large architectural pivots or modifying established automation strategies (e.g., migrating off Turborepo, changing linting hooks, or mutating agent boundaries), consult the `.agents/history/` directory first to comprehend _why_ the current system was built this way before attempting to rip it out.
 - **Update Rule**: Whenever you (the AI and the developer) finalize a _new_ significant architectural shift, automation flow, or boundary rule, the AI MUST proactively generate a summarized `.md` file documenting the context and decisions made, and save it to `.agents/history/YYYY-MM-DD-filename.md`.
+
+## 8. CI Pipeline Requirements
+
+These rules govern the GitHub Actions environment and must be replicated in any new workflow file added to this repository.
+
+### Node.js Version
+
+- The required Node.js version is **>=24.0.0**, pinned in `.nvmrc` (`24.15.0`) and enforced via the `engines` field in the root `package.json`.
+- All workflow files MUST specify `node-version: '24'` in the `actions/setup-node@v4` step.
+- **Why**: The `autoskills` package (`npx -y autoskills`) requires `Node >= 22.6.0`. Using the default runner version (Node 20) causes the `sync:skills` postinstall script to fail with `EBADENGINE` and `exit code 1`.
+- **Template**:
+  ```yaml
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: "24"
+      cache: "npm"
+  ```
+
+### Disabling Husky in Bot Commit Jobs
+
+- Any workflow job that performs an automated `git commit` (e.g., via `peter-evans/create-pull-request`) MUST set `HUSKY: '0'` at the job level.
+- **Why**: Husky's pre-commit hook triggers `lint-staged`, which runs `git stash` to back up the working tree. On Linux CI runners, `autoskills` generates `.claude/skills/` using symlinks. Git refuses to stash paths that traverse symlinks (`error: path is beyond a symbolic link`), crashing the commit. `HUSKY=0` is the [officially documented](https://typicode.github.io/husky/how-to.html#ci-server-and-docker) way to disable hooks in CI.
+- **This does NOT affect local commits**: `HUSKY=0` is scoped to the GitHub runner's environment. Developer commits always run hooks normally.
+- **Template**:
+  ```yaml
+  jobs:
+    my-bot-job:
+      runs-on: ubuntu-latest
+      env:
+        HUSKY: "0" # Disable Husky hooks in CI (lint-staged can't stash paths beyond symlinks)
+  ```
