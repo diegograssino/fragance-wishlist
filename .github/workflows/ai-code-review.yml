@@ -1,0 +1,41 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    branches: [main, dev]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  ai-code-review:
+    name: ai-code-review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Gemini Code Review
+        uses: sshnaidm/gemini-code-review-action@v2
+        with:
+          gemini-key: ${{ secrets.GEMINI_API_KEY }}
+          model: "gemini-2.5-flash"
+          temperature: 0.0
+          add-files: "true"
+          context-lines: "15"
+          review-title: "AI Code Review"
+          prompt: |
+            You are a senior full-stack engineer reviewing a TypeScript/React monorepo
+            (Turborepo, React, Node.js API). Focus only on:
+            - Bugs and incorrect logic
+            - Security vulnerabilities (hardcoded secrets, injection, unsafe patterns)
+            - Performance issues (unnecessary re-renders, N+1 queries, blocking async)
+            - TypeScript type safety (use of `any`, missing types)
+            - React best practices (missing hook deps, incorrect key usage)
+            - Unhandled promise rejections or missing error handling
+            Skip style/formatting issues — ESLint and Prettier already handle those.
+            If nothing significant is found, say so clearly and briefly.
