@@ -32,7 +32,7 @@ jobs:
           commit-message: "chore(ai): auto-update agent skills from autoskills.sh"
           title: "🤖 Auto-update AI Agent Skills"
           body: |
-            This PR automatically updates the `.agents/workflows/` and any other AI standard files using [autoskills.sh](https://autoskills.sh/).
+            This PR automatically updates the `.agents/skills/autoskills/` and any other AI standard files using [autoskills.sh](https://autoskills.sh/).
             
             This ensures our AI pair-programmers have the most up-to-date context regarding our technology stack.
           branch: "chore/update-ai-skills"
