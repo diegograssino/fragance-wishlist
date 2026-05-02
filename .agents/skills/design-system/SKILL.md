@@ -1,3 +1,8 @@
+---
+name: design-system
+description: Design system and theming rules. Use when adding new colors, tokens, or modifying Tailwind CSS.
+---
+
 # Design System & Theming Rules
 
 When interacting with the design system, colors, or tokens in this monorepo, AI agents must follow these strict architectural rules:

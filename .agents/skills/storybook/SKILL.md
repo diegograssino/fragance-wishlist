@@ -1,3 +1,8 @@
+---
+name: storybook
+description: Storybook architecture and rules. Use when writing stories or configuring Storybook builder.
+---
+
 # Storybook Architecture & Rules
 
 This document outlines the strict rules and architectural decisions for the Storybook integration within the monorepo.

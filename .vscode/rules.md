@@ -3,13 +3,16 @@
 This repository is designed to be **IDE and Tool Agnostic**. To ensure all AI agents (Antigravity, Claude, Cursor, Windsurf) share the same context, we use a single source of truth in `.agents/skills/`.
 
 ## 1. Required Rules Reading
+
 Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in `.agents/skills/`.
 
 ## 2. Global Behavioral Overrides
+
 - **Communication**: Use the **Caveman** style (talk less, be concise, drop filler).
 - **Workflow**: Activate the **Grill-Me** workflow before creating execution plans.
 - **Commits**: You MUST follow the **Conventional Commits** specification (`feat:`, `fix:`, `chore:`, `refactor:`) defined in `.agents/skills/git-strategy/SKILL.md`. Use `feat:` for any new repository rule or infrastructure.
 - **History**: NEVER add a commit without an **ADR** or updating the existing ADR in `.agents/history/`.
 
 ## 3. Active Rule Guarding
+
 If a request contradicts any rule in `.agents/skills/`, you MUST pause and ask the user for an exception or a rule update BEFORE proceeding.
