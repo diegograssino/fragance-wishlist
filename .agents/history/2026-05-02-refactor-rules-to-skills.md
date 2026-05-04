@@ -23,4 +23,4 @@ Migrate all repository rules and architectural guidelines into a standardized, t
 - **Negative**: Requires discipline to keep `SKILL.md` files under 100 lines and use `REFERENCE.md` for overflow.
 - **Requirement**: Mandatory ADR update/creation for every branch/significant change.
 - **Commit Standards**: Explicitly defined `feat:` for new rules and `refactor:` for reorganization in `git-strategy/SKILL.md`.
-- **Visibility**: Implemented **Agent Visibility Rule** in `repo-behavior/SKILL.md`. Unified all root barrel imports (`CLAUDE.md`, `.cursorrules`, `.vscode/rules.md`) to be identical and explicit about behavior overrides.
+- **Visibility**: Implemented **Immutable Alignment Rule** in `repo-behavior/SKILL.md`. Unified all root barrel imports (`CLAUDE.md`, `.cursorrules`, `.vscode/rules.md`) to be bit-for-bit identical and mandatory to synchronize. Added `settings.json` instructions for VS Code Copilot compatibility.

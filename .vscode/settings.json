@@ -60,5 +60,15 @@
     "**/public/**"
   ],
   // DOC: Add ignore words here if you found any check with errors
-  "cSpell.ignoreWords": ["fragance", "stylelint", "stylelintrc"]
+  "cSpell.ignoreWords": ["fragance", "stylelint", "stylelintrc"],
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".vscode/rules.md"
+    }
+  ],
+  "github.copilot.chat.review.instructions": [
+    {
+      "file": ".vscode/rules.md"
+    }
+  ]
 }
