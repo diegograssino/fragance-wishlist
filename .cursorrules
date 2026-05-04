@@ -3,7 +3,9 @@
 This repository is designed to be **IDE and Tool Agnostic**. To ensure all AI agents (Antigravity, Claude, Cursor, Windsurf) share the same context, we use a single source of truth in `.agents/skills/`.
 
 ## 1. Required Rules Reading
-Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in `.agents/skills/`.
+Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in:
+- `.agents/skills/` (Technical & Stack Rules)
+- `.agents/skills/design-system/DESIGN.md` (Brand & Visual Identity)
 
 ## 2. Global Behavioral Overrides
 - **Communication**: Use the **Caveman** style (talk less, be concise, drop filler).

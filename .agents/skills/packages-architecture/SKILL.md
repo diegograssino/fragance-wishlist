@@ -31,11 +31,14 @@ description: Rules for shared monorepo packages (UI, helpers, types, environment
 - No data fetching. Pass data via `props`.
 - Do not couple to Next.js specific imports (`next/link`, `next/image`) unless abstracted.
 
-## 5. Design System Rules (CSS)
+## 5. Design System Rules (Source of Truth)
 
-- `theme.ts` reads `.env` and constructs `THEME_STYLES`.
-- Apply `THEME_STYLES` directly to root `<html>`. Do NOT create `<ThemeProvider>`.
-- Use Tailwind classes for radius and shadows (`rounded-lg`), not custom CSS variables.
+- **Absolute Source**: The root `DESIGN.md` dictates all colors, typography, and spacing.
+- **Bridge**: `theme.ts` reads `.env` and constructs `THEME_STYLES` with hardcoded fallbacks matching `DESIGN.md`.
+- **Injection**: Apply `THEME_STYLES` directly to root `<html>`.
+- **No Derivations**: Do not calculate container colors; use the ones provided in the spec.
+
+> See ADR [2026-05-04-design-system-absolute-source-of-truth.md](file:///Users/diegograssino/repos/personal/fragance-wishlist/.agents/history/2026-05-04-design-system-absolute-source-of-truth.md) for details.
 
 ---
 

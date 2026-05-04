@@ -10,7 +10,7 @@ const CataloguePage = ({
 }: CataloguePageProps) => {
   return (
     <main>
-      <Typography as="h1" size="xl" weight="semibold" className="mb-6">
+      <Typography as="h1" size="headline-md" weight="semibold" className="mb-6">
         Catalogue
       </Typography>
       <PaginationPanel pageParam={pageParam} perPageParam={perPageParam} />

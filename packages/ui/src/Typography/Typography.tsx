@@ -1,41 +1,44 @@
 import React from "react";
-import clsx from "clsx";
+import { cn } from "../utils/cn";
 import { TypographyProps } from "./Typography.types";
 import {
   sizeMapping,
   weightMapping,
   variantMapping,
   booleanMappings,
+  TAG_TYPOGRAPHY_DEFAULTS,
+  DEFAULT_TYPOGRAPHY,
 } from "./Typography.constants";
-import { getTypographyDefaults } from "./Typography.helpers";
 
 const Typography = ({
   children,
   as: Tag = "p",
   weight,
   size,
-  variant = "default",
+  variant = "on-surface",
   truncate = false,
   shadow = false,
   disabled = false,
   className,
   ...otherProps
 }: TypographyProps) => {
-  const { defaultSize, defaultWeight } = getTypographyDefaults(Tag);
+  const defaults =
+    (typeof Tag === "string" ? TAG_TYPOGRAPHY_DEFAULTS[Tag] : null) ||
+    DEFAULT_TYPOGRAPHY;
 
-  const finalSize = size || defaultSize;
-  const finalWeight = weight || defaultWeight;
+  const finalSize = size || defaults.size;
+  const finalWeight = weight || defaults.weight;
 
   return (
     <Tag
       {...otherProps}
-      className={clsx(
-        variantMapping[variant],
+      className={cn(
         sizeMapping[finalSize as string],
         weightMapping[finalWeight as string],
         truncate && booleanMappings.truncate,
         shadow && booleanMappings.shadow,
         disabled && booleanMappings.disabled,
+        variantMapping[variant],
         className,
       )}
     >

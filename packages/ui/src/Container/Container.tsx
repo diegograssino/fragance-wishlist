@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import clsx from "clsx";
+import { cn } from "../utils/cn";
 import { ContainerProps } from "./Container.types";
 
 const Container = forwardRef<HTMLElement, ContainerProps>(
@@ -7,7 +7,7 @@ const Container = forwardRef<HTMLElement, ContainerProps>(
     return (
       <Tag
         ref={ref}
-        className={clsx(
+        className={cn(
           "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full",
           className,
         )}

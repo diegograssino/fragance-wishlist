@@ -8,5 +8,6 @@ export { default as Typography } from "./Typography/Typography";
 export type * from "./Typography/Typography.types";
 
 export * from "./theme";
+export * from "./utils/cn";
 
 export type * from "./types";

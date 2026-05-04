@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import Link from "next/link";
-import clsx from "clsx";
+import { cn } from "../utils/cn";
 import { ButtonProps } from "./Button.types";
 import { variantStyles, sizeStyles } from "./Button.constants";
 
@@ -19,7 +19,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     },
     ref,
   ) => {
-    const classes = clsx(
+    const classes = cn(
       "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-1 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:pointer-events-none",
       variantStyles[variant as string],
       sizeStyles[size as string],

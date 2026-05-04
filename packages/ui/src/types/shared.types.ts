@@ -1,25 +1,29 @@
 export type ThemeSize =
-  | "xs"
+  // Button sizes
   | "sm"
   | "md"
   | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl"
-  | "icon";
+  | "icon"
+  // Typography sizes
+  | "display-lg"
+  | "headline-md"
+  | "title-sm"
+  | "body-main"
+  | "data-mono"
+  | "label-caps";
+
 export type ThemeVariant =
-  | "default"
-  | "muted"
-  | "inverted"
-  | "accent-1"
-  | "accent-2"
-  | "accent-3"
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "surface"
+  | "on-surface"
+  | "on-surface-variant"
   | "success"
   | "error"
   | "alert"
   | "info"
   | "outline"
   | "ghost";
+
 export type ThemeWeight = "light" | "default" | "medium" | "semibold" | "bold";

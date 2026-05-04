@@ -1,9 +1,7 @@
+import { Container, Typography, ThemeSize, ThemeWeight } from "@repo/ui";
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Container, Typography } from "./index";
-import { ThemeSize, ThemeWeight } from "./types";
 
-const WelcomeComponent = () => {
+const DesignSystemPage = () => {
   const colors = [
     {
       name: "Primary",
@@ -87,7 +85,6 @@ const WelcomeComponent = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  {/* Base Color */}
                   <div className="flex-1">
                     <div
                       className="h-24 w-full rounded-xl shadow-inner border border-outline-variant"
@@ -98,7 +95,6 @@ const WelcomeComponent = () => {
                     </Typography>
                   </div>
 
-                  {/* Container/Muted Variant */}
                   <div className="flex-1">
                     <div
                       className="h-24 w-full rounded-xl shadow-inner border border-outline-variant"
@@ -108,12 +104,6 @@ const WelcomeComponent = () => {
                       Container
                     </Typography>
                   </div>
-                </div>
-
-                <div className="mt-2">
-                  <Typography size="data-mono" variant="on-surface-variant">
-                    Role: {color.name} scale
-                  </Typography>
                 </div>
               </div>
             ))}
@@ -330,15 +320,4 @@ const WelcomeComponent = () => {
   );
 };
 
-const meta: Meta = {
-  title: "Design System/Welcome",
-  component: WelcomeComponent,
-  parameters: {
-    layout: "fullscreen",
-  },
-};
-
-export default meta;
-type Story = StoryObj<typeof WelcomeComponent>;
-
-export const Home: Story = {};
+export default DesignSystemPage;

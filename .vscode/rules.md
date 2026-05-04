@@ -4,7 +4,10 @@ This repository is designed to be **IDE and Tool Agnostic**. To ensure all AI ag
 
 ## 1. Required Rules Reading
 
-Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in `.agents/skills/`.
+Before writing code, creating folders, proposing commits, or modifying the README, you MUST read and strictly follow the markdown files located in:
+
+- `.agents/skills/` (Technical & Stack Rules)
+- `.agents/skills/design-system/DESIGN.md` (Brand & Visual Identity)
 
 ## 2. Global Behavioral Overrides
 

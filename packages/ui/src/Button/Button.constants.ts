@@ -1,23 +1,22 @@
 export const variantStyles: Record<string, string> = {
-  default:
-    "bg-foreground text-background hover:bg-foreground-muted disabled:bg-foreground-muted disabled:text-background",
-  "accent-1":
-    "bg-accent-1 text-foreground hover:bg-accent-1-muted disabled:bg-accent-1-muted disabled:text-foreground-muted",
-  "accent-2":
-    "bg-accent-2 text-foreground hover:bg-accent-2-muted disabled:bg-accent-2-muted disabled:text-foreground-muted",
-  "accent-3":
-    "bg-accent-3 text-background hover:bg-accent-3-muted disabled:bg-accent-3-muted disabled:text-background",
+  primary:
+    "bg-primary text-on-primary hover:bg-primary-fixed disabled:bg-surface-variant disabled:text-on-surface-variant",
+  secondary:
+    "bg-secondary text-on-secondary hover:bg-secondary-fixed disabled:bg-surface-variant disabled:text-on-surface-variant",
+  tertiary:
+    "bg-tertiary text-on-tertiary hover:bg-tertiary-fixed disabled:bg-surface-variant disabled:text-on-surface-variant",
+  surface:
+    "bg-surface text-on-surface hover:bg-surface-dim disabled:bg-surface-variant disabled:text-on-surface-variant",
   success:
-    "bg-success text-white hover:bg-success-muted disabled:bg-success-muted disabled:text-white",
+    "bg-success text-on-success hover:bg-success-muted disabled:bg-surface-variant disabled:text-on-surface-variant",
   error:
-    "bg-error text-white hover:bg-error-muted disabled:bg-error-muted disabled:text-white",
+    "bg-error text-on-error hover:bg-error-container disabled:bg-surface-variant disabled:text-on-surface-variant",
   alert:
-    "bg-alert text-white hover:bg-alert-muted disabled:bg-alert-muted disabled:text-white",
-  info: "bg-info text-white hover:bg-info-muted disabled:bg-info-muted disabled:text-white",
+    "bg-alert text-on-alert hover:bg-alert-muted disabled:bg-surface-variant disabled:text-on-surface-variant",
+  info: "bg-info text-on-info hover:bg-info-muted disabled:bg-surface-variant disabled:text-on-surface-variant",
   outline:
-    "border border-foreground text-foreground hover:bg-foreground-muted disabled:border-foreground-muted disabled:text-foreground-muted",
-  ghost:
-    "text-foreground hover:bg-foreground-muted disabled:text-foreground-muted",
+    "border border-outline text-on-surface hover:bg-surface-dim disabled:border-outline-variant disabled:text-outline-variant",
+  ghost: "text-on-surface hover:bg-surface-dim disabled:text-outline-variant",
 };
 
 export const sizeStyles: Record<string, string> = {

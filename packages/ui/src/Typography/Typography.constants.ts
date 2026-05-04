@@ -1,13 +1,11 @@
 export const sizeMapping: Record<string, string> = {
-  xs: "text-xs",
-  sm: "text-sm",
-  md: "text-base",
-  lg: "text-lg",
-  xl: "text-xl",
-  "2xl": "text-2xl",
-  "3xl": "text-3xl",
-  "4xl": "text-4xl",
-  "5xl": "text-5xl",
+  // DESIGN.md Hierarchy
+  "display-lg": "text-display-lg font-primary",
+  "headline-md": "text-headline-md font-primary",
+  "title-sm": "text-title-sm font-secondary",
+  "body-main": "text-body-main font-secondary",
+  "data-mono": "text-data-mono font-secondary",
+  "label-caps": "text-label-caps font-secondary",
 };
 
 export const weightMapping: Record<string, string> = {
@@ -19,12 +17,11 @@ export const weightMapping: Record<string, string> = {
 };
 
 export const variantMapping: Record<string, string> = {
-  default: "text-foreground",
-  muted: "text-foreground-muted",
-  inverted: "text-foreground-inverted",
-  "accent-1": "text-accent-1",
-  "accent-2": "text-accent-2",
-  "accent-3": "text-accent-3",
+  "on-surface": "text-on-surface",
+  "on-surface-variant": "text-on-surface-variant",
+  primary: "text-primary",
+  secondary: "text-secondary",
+  tertiary: "text-tertiary",
   success: "text-success",
   error: "text-error",
   alert: "text-alert",
@@ -35,4 +32,19 @@ export const booleanMappings = {
   truncate: "truncate",
   shadow: "drop-shadow-sm",
   disabled: "opacity-50 cursor-not-allowed",
+};
+
+export const DEFAULT_TYPOGRAPHY = {
+  size: "body-main",
+  weight: "default",
+} as const;
+
+export const TAG_TYPOGRAPHY_DEFAULTS: Record<
+  string,
+  { size: string; weight: string }
+> = {
+  h1: { size: "display-lg", weight: "bold" },
+  h2: { size: "headline-md", weight: "bold" },
+  h3: { size: "title-sm", weight: "semibold" },
+  h4: { size: "title-sm", weight: "semibold" },
 };

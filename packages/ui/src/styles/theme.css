@@ -1,79 +1,229 @@
 :root {
-  --base-foreground-inverted: color-mix(
-    in srgb,
-    var(--base-foreground) 5%,
-    white
-  );
-  --background: var(--base-background);
-  --accent-1: var(--base-accent-1);
-  --accent-2: var(--base-accent-2);
-  --accent-3: var(--base-accent-3);
-  --foreground: var(--base-foreground);
-  --foreground-inverted: var(--base-foreground-inverted);
-  --success: var(--base-success);
-  --error: var(--base-error);
-  --alert: var(--base-alert);
-  --info: var(--base-info);
+  /* Surface */
+  --surface: var(--base-surface);
+  --surface-dim: var(--base-surface-dim);
+  --surface-bright: var(--base-surface-bright);
+  --surface-container-lowest: var(--base-surface-container-lowest);
+  --surface-container-low: var(--base-surface-container-low);
+  --surface-container: var(--base-surface-container);
+  --surface-container-high: var(--base-surface-container-high);
+  --surface-container-highest: var(--base-surface-container-highest);
+  --on-surface: var(--base-on-surface);
+  --on-surface-variant: var(--base-on-surface-variant);
+  --inverse-surface: var(--base-inverse-surface);
+  --inverse-on-surface: var(--base-inverse-on-surface);
+  --outline: var(--base-outline);
+  --outline-variant: var(--base-outline-variant);
+  --surface-tint: var(--base-surface-tint);
+  --surface-variant: var(--base-surface-variant);
 
-  /* Muted variants */
-  --background-muted: color-mix(in srgb, var(--background) 50%, transparent);
-  --accent-1-muted: color-mix(in srgb, var(--accent-1) 50%, transparent);
-  --accent-2-muted: color-mix(in srgb, var(--accent-2) 50%, transparent);
-  --accent-3-muted: color-mix(in srgb, var(--accent-3) 50%, transparent);
-  --foreground-muted: color-mix(in srgb, var(--foreground) 50%, transparent);
-  --foreground-inverted-muted: color-mix(
-    in srgb,
-    var(--foreground-inverted) 50%,
-    transparent
-  );
-  --success-muted: color-mix(in srgb, var(--success) 50%, transparent);
-  --error-muted: color-mix(in srgb, var(--error) 50%, transparent);
-  --alert-muted: color-mix(in srgb, var(--alert) 50%, transparent);
-  --info-muted: color-mix(in srgb, var(--info) 50%, transparent);
+  /* Primary */
+  --primary: var(--base-primary);
+  --on-primary: var(--base-on-primary);
+  --primary-container: var(--base-primary-container);
+  --on-primary-container: var(--base-on-primary-container);
+  --inverse-primary: var(--base-inverse-primary);
+  --primary-fixed: var(--base-primary-fixed);
+  --primary-fixed-dim: var(--base-primary-fixed-dim);
+  --on-primary-fixed: var(--base-on-primary-fixed);
+  --on-primary-fixed-variant: var(--base-on-primary-fixed-variant);
+
+  /* Secondary */
+  --secondary: var(--base-secondary);
+  --on-secondary: var(--base-on-secondary);
+  --secondary-container: var(--base-secondary-container);
+  --on-secondary-container: var(--base-on-secondary-container);
+  --secondary-fixed: var(--base-secondary-fixed);
+  --secondary-fixed-dim: var(--base-secondary-fixed-dim);
+  --on-secondary-fixed: var(--base-on-secondary-fixed);
+  --on-secondary-fixed-variant: var(--base-on-secondary-fixed-variant);
+
+  /* Tertiary */
+  --tertiary: var(--base-tertiary);
+  --on-tertiary: var(--base-on-tertiary);
+  --tertiary-container: var(--base-tertiary-container);
+  --on-tertiary-container: var(--base-on-tertiary-container);
+  --tertiary-fixed: var(--base-tertiary-fixed);
+  --tertiary-fixed-dim: var(--base-tertiary-fixed-dim);
+  --on-tertiary-fixed: var(--base-on-tertiary-fixed);
+  --on-tertiary-fixed-variant: var(--base-on-tertiary-fixed-variant);
+
+  /* Error & Actions */
+  --error: var(--base-error);
+  --on-error: var(--base-on-error);
+  --error-container: var(--base-error-container);
+  --on-error-container: var(--base-on-error-container);
+  --success: var(--base-success);
+  --on-success: white;
+  --success-muted: var(--base-success-muted);
+  --alert: var(--base-alert);
+  --on-alert: white;
+  --alert-muted: var(--base-alert-muted);
+  --info: var(--base-info);
+  --on-info: white;
+  --info-muted: var(--base-info-muted);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-background-muted: var(--background-muted);
-  --color-accent-1: var(--accent-1);
-  --color-accent-1-muted: var(--accent-1-muted);
-  --color-accent-2: var(--accent-2);
-  --color-accent-2-muted: var(--accent-2-muted);
-  --color-accent-3: var(--accent-3);
-  --color-accent-3-muted: var(--accent-3-muted);
-  --color-foreground: var(--foreground);
-  --color-foreground-muted: var(--foreground-muted);
-  --color-foreground-inverted: var(--foreground-inverted);
-  --color-foreground-inverted-muted: var(--foreground-inverted-muted);
-  --color-success: var(--success);
-  --color-success-muted: var(--success-muted);
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
   --color-error: var(--error);
-  --color-error-muted: var(--error-muted);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --color-success: var(--success);
+  --color-on-success: var(--on-success);
+  --color-success-muted: var(--success-muted);
   --color-alert: var(--alert);
+  --color-on-alert: var(--on-alert);
   --color-alert-muted: var(--alert-muted);
   --color-info: var(--info);
+  --color-on-info: var(--on-info);
   --color-info-muted: var(--info-muted);
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-tint: var(--surface-tint);
+  --color-background: var(--surface);
+  --color-foreground: var(--on-surface);
+
+  /* Fonts */
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
+
+  /* Typography Scales */
+  --text-display-lg: var(--base-typography-display-lg-size);
+  --text-display-lg--line-height: var(--base-typography-display-lg-lineheight);
+  --text-display-lg--font-weight: var(--base-typography-display-lg-weight);
+  --text-display-lg--letter-spacing: var(
+    --base-typography-display-lg-letterspacing
+  );
+  --text-headline-md: var(--base-typography-headline-md-size);
+  --text-headline-md--line-height: var(
+    --base-typography-headline-md-lineheight
+  );
+  --text-headline-md--font-weight: var(--base-typography-headline-md-weight);
+  --text-title-sm: var(--base-typography-title-sm-size);
+  --text-title-sm--line-height: var(--base-typography-title-sm-lineheight);
+  --text-title-sm--font-weight: var(--base-typography-title-sm-weight);
+  --text-title-sm--letter-spacing: var(
+    --base-typography-title-sm-letterspacing
+  );
+  --text-body-main: var(--base-typography-body-main-size);
+  --text-body-main--line-height: var(--base-typography-body-main-lineheight);
+  --text-body-main--font-weight: var(--base-typography-body-main-weight);
+  --text-data-mono: var(--base-typography-data-mono-size);
+  --text-data-mono--line-height: var(--base-typography-data-mono-lineheight);
+  --text-data-mono--font-weight: var(--base-typography-data-mono-weight);
+  --text-data-mono--letter-spacing: var(
+    --base-typography-data-mono-letterspacing
+  );
+  --text-label-caps: var(--base-typography-label-caps-size);
+  --text-label-caps--line-height: var(--base-typography-label-caps-lineheight);
+  --text-label-caps--font-weight: var(--base-typography-label-caps-weight);
+
+  /* Radii */
+  --radius-sm: var(--base-rounded-sm);
+  --radius-md: var(--base-rounded-md);
+  --radius-lg: var(--base-rounded-lg);
+  --radius-xl: var(--base-rounded-xl);
+  --radius-full: var(--base-rounded-full);
+  --radius: var(--base-rounded-default);
+
+  /* Spacing */
+  --spacing-base: var(--base-spacing-base);
+  --spacing-xs: var(--base-spacing-xs);
+  --spacing-sm: var(--base-spacing-sm);
+  --spacing-md: var(--base-spacing-md);
+  --spacing-lg: var(--base-spacing-lg);
+  --spacing-xl: var(--base-spacing-xl);
+  --spacing-container-max: var(--base-spacing-container-max);
+  --spacing-gutter: var(--base-spacing-gutter);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: color-mix(in srgb, var(--base-background) 5%, black);
-    --accent-1: color-mix(in srgb, var(--base-accent-1) 15%, black);
-    --accent-2: color-mix(in srgb, var(--base-accent-2) 45%, black);
-    --accent-3: color-mix(in srgb, var(--base-accent-3) 90%, black);
-    --foreground: var(--base-foreground-inverted);
-    --foreground-inverted: var(--base-foreground);
-    --success: color-mix(in srgb, var(--base-success) 20%, black);
-    --error: color-mix(in srgb, var(--base-error) 20%, black);
-    --alert: color-mix(in srgb, var(--base-alert) 20%, black);
-    --info: color-mix(in srgb, var(--base-info) 20%, black);
+    /* Dynamic Dark Mode scale derived from BASE_SURFACE */
+    --surface: color-mix(in srgb, var(--base-surface) 5%, black);
+    --surface-dim: color-mix(in srgb, var(--base-surface) 2%, black);
+    --surface-bright: color-mix(in srgb, var(--base-surface) 10%, black);
+    --surface-container-lowest: color-mix(
+      in srgb,
+      var(--base-surface) 2%,
+      black
+    );
+    --surface-container-low: color-mix(in srgb, var(--base-surface) 4%, black);
+    --surface-container: color-mix(in srgb, var(--base-surface) 8%, black);
+    --surface-container-high: color-mix(
+      in srgb,
+      var(--base-surface) 12%,
+      black
+    );
+    --surface-container-highest: color-mix(
+      in srgb,
+      var(--base-surface) 16%,
+      black
+    );
+
+    /* Dynamic Dark Mode text derived from BASE_ON_SURFACE */
+    --on-surface: color-mix(in srgb, var(--base-on-surface) 10%, white);
+    --on-surface-variant: color-mix(
+      in srgb,
+      var(--on-surface) 70%,
+      var(--surface)
+    );
+    --outline: color-mix(in srgb, var(--on-surface) 40%, var(--surface));
+    --outline-variant: color-mix(
+      in srgb,
+      var(--on-surface) 15%,
+      var(--surface)
+    );
+
+    /* Primary / Secondary / Tertiary in dark mode should use Fixed variants from DESIGN.md */
+    --primary: var(--base-primary-fixed);
+    --secondary: var(--base-secondary-fixed);
+    --tertiary: var(--base-tertiary-fixed);
   }
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
+  background: var(--color-surface);
+  color: var(--color-on-surface);
   font-family: var(--font-primary);
 }
